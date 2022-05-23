@@ -46,13 +46,13 @@ import BigNumber from 'bignumber.js';
 import {
 	sleep,
 	convertBigNumberToDate,
-	convertWeiToEsdt,
+	convertEsdtToWei,
 } from './util';
 
 async function mint(nonce) {
 	const args: TypedValue[] = [
 		BytesValue.fromUTF8(TOKEN_ID),
-		new U64Value(convertWeiToEsdt(TOKEN_AMOUNT, TOKEN_DECIMALS)),
+		new BigUIntValue(convertEsdtToWei(TOKEN_AMOUNT, TOKEN_DECIMALS)),
 		BytesValue.fromUTF8(`${TOKEN_NAME} #${nonce}`),
 		new U64Value(300), // royalties 3%
 		BytesValue.fromUTF8('HASH'),

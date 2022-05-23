@@ -59,7 +59,7 @@ async function main() {
 	];
 	const { argumentsString } = new ArgSerializer().valuesToString(args);
 	const data = new TransactionPayload(`registerMetaESDT@${argumentsString}`);
-	const gasLimit = GasLimit.forTransfer(data).add(new GasLimit(60000000));
+	const gasLimit = new GasLimit(100000000);
 
 	const tx = new Transaction({
 		nonce: account.getNonceThenIncrement(),
