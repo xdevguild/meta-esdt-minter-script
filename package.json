@@ -6,7 +6,8 @@
   "scripts": {
     "1": "ts-node src/1-issue",
     "2": "ts-node src/2-set-roles",
-    "3": "ts-node src/3-mint"
+    "3": "ts-node src/3-unset-roles",
+    "4": "ts-node src/4-mint"
   },
   "author": "Ice <icegriffin1122@gmail.com>",
   "license": "ISC",

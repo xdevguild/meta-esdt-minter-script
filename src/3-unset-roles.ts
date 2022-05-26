@@ -47,12 +47,10 @@ async function main() {
 	const args: TypedValue[] = [
 		BytesValue.fromUTF8(TOKEN_ID),
 		new AddressValue(account.address),
-		BytesValue.fromUTF8('ESDTRoleNFTCreate'),
-		BytesValue.fromUTF8('ESDTRoleNFTBurn'),
-		BytesValue.fromUTF8('ESDTRoleNFTAddQuantity'),
+		BytesValue.fromUTF8('ESDTTransferRole'),
 	];
 	const { argumentsString } = new ArgSerializer().valuesToString(args);
-	const data = new TransactionPayload(`setSpecialRole@${argumentsString}`);
+	const data = new TransactionPayload(`unSetSpecialRole@${argumentsString}`);
 	const gasLimit = GasLimit.forTransfer(data).add(new GasLimit(60000000));
 
 	const tx = new Transaction({
